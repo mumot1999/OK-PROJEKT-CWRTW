@@ -1,7 +1,16 @@
-cmake_minimum_required(VERSION 3.12)
-project(OK_Projekt)
+cmake_minimum_required(VERSION 3.14)
+project(testing_test)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(OK_Projekt main.cpp node.cpp node.h)
+set(SOURCE_FILES main.cpp)
+add_executable(Project_run ${SOURCE_FILES})
+
+include_directories(Node_lib)
+add_subdirectory(Node_lib)
+
+target_link_libraries(Project_run Node_lib)
+
 add_subdirectory(Google_tests)
+
+
